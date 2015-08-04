@@ -1,6 +1,6 @@
 # Babita Framework 1
 
-BF1 é um *nano* framework PHP inspirado no [Silex](http://silex.sensiolabs.org/), [Slim](http://www.slimframework.com/) e [Simple MVC Framework](http://simplemvcframework.com/php-framework) (Utiliza alguns componentes destes). Foi desenvolvido / implementado para atender algumas necessidades do SGAMA - Sistema de Gestão Acadêmica do Maranhão. BF1 é pequeno, rápido e simples de usar. O toolkit possibilita o desenvolvimento de projetos flexiveis sem burocracia. Você pode fazer um clone / download e começar a trabalhar imediatamente.
+BF1 é um *nano* framework PHP baseado no [SMVC](http://simplemvcframework.com/php-framework), [Silex](http://silex.sensiolabs.org/) e [Slim](http://www.slimframework.com/) (Utiliza componentes destes). Foi desenvolvido / implementado para atender necessidades do SGAMA - Sistema de Gestão Acadêmica do Maranhão. BF1 é pequeno, rápido e simples de usar. O toolkit possibilita o desenvolvimento de projetos flexiveis sem burocracia. Você pode fazer um clone / download e começar a trabalhar imediatamente.
 
 ### Exemplos
 
