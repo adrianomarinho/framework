@@ -1,0 +1,14 @@
+    {
+        "name": "Babita",
+        "description": "Babita Framework 1",
+        "authors": [
+            {
+                "name": "Fábio Assunção da Silva",
+                "homepage": "http://www.fabioassuncao.com.br"
+            }
+        ],
+	    "autoload": {
+	       "psr-4": {"": "app/"}
+	    },
+    	"minimum-stability": "dev"
+    }
