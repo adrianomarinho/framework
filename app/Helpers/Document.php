@@ -8,6 +8,10 @@ namespace Helpers;
  * @version 1.0
  * @date updated Feb 07, 2015
  * @date May 18 2015
+ *
+ * @author Fábio Assunção <fabio@fabioassuncao.com.br>
+ * @updated in July 31 2015
+ * Inclusion of new methods
  */
 class Document
 {
