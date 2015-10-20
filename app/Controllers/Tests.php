@@ -11,14 +11,14 @@ use Helpers\Validations;
 use Helpers\Url;
 use Helpers\MyCurl;
 
-class Testes
+class Tests
 {
 
 	public $db;
 	
 	public function __construct()
 	{
-		$this->db = Database::get();
+		//$this->db = Database::get();
 	}
 	
     public function index()
@@ -32,43 +32,19 @@ class Testes
     	
     }
 	
-    public function teste()
+    public function testUrl($param)
     {
-    	$x = MyCurl::get( DIR.'/testes/request', array('msg' => 'Message 1'), DIR.'/testesRest' );
-    	View::output($x, 'text' );
-    }
 
-    public function request()
-    {
-    	View::output($_REQUEST, 'text');
-    	
-    	echo "<hr>";
-    	
-    	View::output($_SERVER, 'text');
-		
-		echo "<hr>";
-		
-		if($_SERVER['REQUEST_METHOD'] === "PUT"){
-			parse_str(file_get_contents('php://input', false , null, -1 , $_SERVER['CONTENT_LENGTH'] ), $_PUT);
-		}
-		else{
-			$_PUT = array();
-		}
+    	$a = [];
+        $a['param'] = $param;
+        $a['get'] = $_GET;
+        View::output($a, 'json');
 
-		View::output($_PUT, 'text');
-
-		//View::output($putData, 'text');
     }
 
     public function info()
     {
     	phpinfo();
-    }
-    
-
-    public function removeAcentos()
-    {
-    	echo Validations::removeAccents("Fábio Assunção da Silva");
     }
  
     
@@ -108,9 +84,9 @@ class Testes
 				);
 		
 		$mail->subject("BF1 - email com anexo e template :)");
-		$mail->template('teste.html', $data);
+		$mail->template('mail/teste.html', $data);
 		$mail->destination(array(
-				"aangelomarinho@gmail.com, Adriano Marinho",
+				//"aangelomarinho@gmail.com, Adriano Marinho",
 				"fabio23gt@gmail.com, Fábio Assunção"
 		));
 
@@ -137,7 +113,7 @@ class Testes
 		);
 	
 		$mail->subject("BF1 - mailing list with template");
-		$mail->template('teste.html', $data);
+		$mail->template('mail/teste.html', $data);
 		$mail->from(array('mail' => 'fabio@fabioassuncao.com.br', 'name' => 'Babita Framework 1'));
 		
 		$result = $mail->mailingList(array(
@@ -168,7 +144,7 @@ class Testes
 		
 		foreach($list as $l){
 			
-			$mail->template('teste.html', array(
+			$mail->template('mail/teste.html', array(
 					'title' => 'Babita Framework 1',
 					'subtitle' => 'Test mailing list with template',
 					'name' => $l['name'],

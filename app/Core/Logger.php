@@ -36,7 +36,7 @@ class Logger
     * path to error file
     * @var boolean
     */
-    private static $errorFile = 'log.html';
+    private static $errorFile = 'files/logs/error/log.html';
 
     /**
     * in the event of an error show this message
@@ -44,9 +44,9 @@ class Logger
     public static function customErrorMsg()
     {
 
-        $title = SITETITLE;// . " [Erro inesperado]";
+        $title = SITETITLE;
         $mail = SITEEMAIL;
-        $link_log = DIR . "/log.html";
+        $link_log = DIR . "/files/logs/error/log.html";
         
         $template = <<<EOT
 <!DOCTYPE html>

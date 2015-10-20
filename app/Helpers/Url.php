@@ -108,19 +108,6 @@ class Url
             return DIR . '/app/templates/' . DEFAULT_TEMPLATE.'/';
         }
     }
-    
-    /**
-     * created the absolute address to the view folder
-     * @return string url to template folder
-     */
-    public static function viewPath($custom = false)
-    {
-    	if ($custom == true) {
-    		return DIR . '/app/Views/' . $custom.'/';
-    	} else {
-    		return DIR . '/app/Views/' . DEFAULT_TEMPLATE.'/';
-    	}
-    }
 
     /**
      * converts plain text urls into HTML links, second argument will be

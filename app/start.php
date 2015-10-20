@@ -9,7 +9,7 @@ define('VENDOR_PATH'		, __DIR__.'/../vendor');
 define('APP_PATH'   		, __DIR__.'/../app');
 define('CONTROLLERS_PATH'   , __DIR__.'/../app/Controllers');
 define('MODELS_PATH'   		, __DIR__.'/../app/Models');
-define('VIEWS_PATH'   		, __DIR__.'/../app/Views');
+define('VIEWS_PATH'   		, __DIR__.'/../app/templates');
 define('MODULE_PATH'		, __DIR__.'/../app/modules');
 define('ASSETS_PATH'		, __DIR__.'/../assets');
 define('CSS_PATH'			, __DIR__.'/../assets/css');

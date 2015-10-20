@@ -239,18 +239,10 @@ class Mail extends PhpMailer
 		$this->Body = $body;
 	}
 
-	public function template($template, $data, $custom = false)
+	public function template($template, $data)
 	{
 
-			if($custom){
-
-				$filename = "app/templates/" . $custom ."/". $template;
-
-			}else{
-
-				$filename = "app/templates/email/" . $template;
-
-			}
+			$filename = "app/templates/" . $template;
 
 			$fd = fopen ($filename, "r");
 			$mailcontent = fread ($fd, filesize ($filename));

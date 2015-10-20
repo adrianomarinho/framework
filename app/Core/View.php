@@ -19,20 +19,41 @@ class View
      */
     private static $headers = array();
 
+    // /**
+    //  * include template file
+    //  * @param  string  $path  path to file from views folder
+    //  * @param  array $data  array of data
+    //  * @param  array $error array of errors
+    //  */
+    // public static function render($path, $data = false, $error = false)
+    // {
+    //     if (!headers_sent()) {
+    //         foreach (self::$headers as $header) {
+    //             header($header, true);
+    //         }
+    //     }
+    //     require "app/views/$path.php";
+    // }
+
     /**
-     * include template file
+     * return absolute path to selected template directory
      * @param  string  $path  path to file from views folder
-     * @param  array $data  array of data
-     * @param  array $error array of errors
+     * @param  array   $data  array of data
+     * @param  string  $custom path to template folder
      */
-    public static function render($path, $data = false, $error = false)
+    public static function render($path, $data = false, $custom = false)
     {
         if (!headers_sent()) {
             foreach (self::$headers as $header) {
                 header($header, true);
             }
         }
-        require "app/Views/$path.php";
+
+        if ($custom === false) {
+            require "app/templates/".DEFAULT_TEMPLATE."/$path.php";
+        } else {
+            require "$path.php";
+        }
     }
 
     /**
@@ -49,27 +70,6 @@ class View
             }
         }
         require "app/Modules/$path.php";
-    }
-
-    /**
-     * return absolute path to selected template directory
-     * @param  string  $path  path to file from views folder
-     * @param  array   $data  array of data
-     * @param  string  $custom path to template folder
-     */
-    public static function renderTemplate($path, $data = false, $custom = false)
-    {
-        if (!headers_sent()) {
-            foreach (self::$headers as $header) {
-                header($header, true);
-            }
-        }
-
-        if ($custom === false) {
-            require "app/templates/".DEFAULT_TEMPLATE."/$path.php";
-        } else {
-            require "app/templates/$custom/$path.php";
-        }
     }
 
     /**
