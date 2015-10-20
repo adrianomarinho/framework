@@ -110,11 +110,11 @@ class Testes
 		$mail->subject("BF1 - email com anexo e template :)");
 		$mail->template('teste.html', $data);
 		$mail->destination(array(
-				//"aangelomarinho@gmail.com, Adriano Marinho",
+				"aangelomarinho@gmail.com, Adriano Marinho",
 				"fabio23gt@gmail.com, Fábio Assunção"
 		));
 
-		$mail->attachment('uploads/teste_anexo.png, teste_anexo.png');
+		$mail->attachment('files/uploads/teste_anexo.png, teste_anexo.png');
 		
 		$mail->from(array('mail' => 'fabio@fabioassuncao.com.br', 'name' => 'Babita Framework 1'), false);
 		$mail->replyTo(array('mail' => 'contato@bf1.com', 'name' => 'BF1 Contato novo'));
