@@ -11,9 +11,9 @@ class Welcome
     {
     	$data['subtitle'] = 'Welcome';
     	
-    	View::render('header', $data);
-    	View::render('home');
-    	View::render('footer');
+    	View::render('site/header', $data);
+    	View::render('site/home');
+    	View::render('site/footer');
     	
     }
 }

@@ -14,7 +14,7 @@
         </footer>
 
 
-	<div id="site-navbar" style="position: absolute; top: -4px; right: -3px; border: 0; z-index: 2000;padding:0;margin:0;"><a href="http://github.com/fabioassuncao/babita" target="_blanck" title="BF1 on GitHub" style="background:none;"><img src="<?=DIR?>/assets/img/right-white@2x.png" style="padding:0;margin:0;border:0; -webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;width:150px"></a></div>
+	<div id="site-navbar" style="position: absolute; top: -4px; right: -3px; border: 0; z-index: 2000;padding:0;margin:0;"><a href="https://github.com/babita-framework" target="_blanck" title="BF1 on GitHub" style="background:none;"><img src="<?=DIR?>/assets/img/right-white@2x.png" style="padding:0;margin:0;border:0; -webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none;width:150px"></a></div>
 
 
     <script src="<?= DIR ?>/assets/js/jquery-2.1.4.min.js"></script>

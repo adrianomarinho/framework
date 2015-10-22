@@ -156,7 +156,7 @@ class Mail extends PhpMailer
 	public function from($from, $replyto = true)
 	{
 
-		if($replyto){
+		if($replyto === true){
 			$this->replyTo($from);
 		}
 
@@ -264,7 +264,7 @@ class Mail extends PhpMailer
 
 	private function address($kind, $data, $send = false)
 	{
-		if($send){
+		if($send === true){
 			// SMTP connection will not close after each email sent, reduces SMTP overhead
 			// Deixa em aberto a conexão com servidor
 			$this->SMTPKeepAlive = true;
@@ -394,7 +394,7 @@ class Mail extends PhpMailer
 			// se enviado com sucesso, limpa recipientes e anexos;
 			// Clear all addresses and attachments for next loop
 
-			if(!$mailingList){
+			if($mailingList === false){
 				$this->clearAllRecipients();
 			}
 

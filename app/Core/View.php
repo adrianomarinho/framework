@@ -1,16 +1,20 @@
 <?php
+
 namespace Core;
 
-/*
+/**
  * View - load template pages
  *
- * @author David Carr <dave@simplemvcframework.com>
- * @version 2.2
+ * @author David Carr - dave@simplemvcframework.com
+ * @version 2.1
  * @date June 27, 2014
- * @date updated May 18 2015
+ * @date May 18 2015
+ *
+ * @author Fábio Assunção <fabio@fabioassuncao.com.br>
+ * @updated in July 31 2015
+ * Refactoring and inclusion of new methods
  */
 use Helpers\Validations;
-use Delpers\Data;
 
 class View
 {
@@ -18,22 +22,6 @@ class View
      * @var array Array of HTTP headers
      */
     private static $headers = array();
-
-    // /**
-    //  * include template file
-    //  * @param  string  $path  path to file from views folder
-    //  * @param  array $data  array of data
-    //  * @param  array $error array of errors
-    //  */
-    // public static function render($path, $data = false, $error = false)
-    // {
-    //     if (!headers_sent()) {
-    //         foreach (self::$headers as $header) {
-    //             header($header, true);
-    //         }
-    //     }
-    //     require "app/views/$path.php";
-    // }
 
     /**
      * return absolute path to selected template directory
@@ -52,7 +40,7 @@ class View
         if ($custom === false) {
             require "app/templates/".DEFAULT_TEMPLATE."/$path.php";
         } else {
-            require "$path.php";
+            require "app/templates/$path.php";
         }
     }
 

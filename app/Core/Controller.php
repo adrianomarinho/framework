@@ -3,7 +3,7 @@ namespace Core;
 
 use Core\View;
 
-/*
+/**
  * controller - base controller
  *
  * @author David Carr <dave@simplemvcframework.com>

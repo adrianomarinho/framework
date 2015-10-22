@@ -11,6 +11,8 @@ use Helpers\Validations;
 use Helpers\Url;
 use Helpers\MyCurl;
 
+use Helpers\Template;
+
 class Tests
 {
 
@@ -25,10 +27,13 @@ class Tests
     {
     	
     	$data['subtitle'] = 'Welcome';
-    	
-    	View::render('header', $data);
-    	View::render('home');
-    	View::render('footer');
+    	$data['sitetitle'] = SITETITLE;
+    	$data['dir'] = DIR;
+
+    	$temp = new Template();
+    	$temp->renderPrint('samples/mustache/header.html', $data, true);
+    	$temp->renderPrint('samples/mustache/home.html', $data, true);
+    	$temp->renderPrint('samples/mustache/footer.html', $data, true);
     	
     }
 	
@@ -84,13 +89,13 @@ class Tests
 				);
 		
 		$mail->subject("BF1 - email com anexo e template :)");
-		$mail->template('mail/teste.html', $data);
+		$mail->template('mail/test.html', $data);
 		$mail->destination(array(
 				//"aangelomarinho@gmail.com, Adriano Marinho",
 				"fabio23gt@gmail.com, Fábio Assunção"
 		));
 
-		$mail->attachment('files/uploads/teste_anexo.png, teste_anexo.png');
+		$mail->attachment('storage/uploads/teste_anexo.png, teste_anexo.png');
 		
 		$mail->from(array('mail' => 'fabio@fabioassuncao.com.br', 'name' => 'Babita Framework 1'), false);
 		$mail->replyTo(array('mail' => 'contato@bf1.com', 'name' => 'BF1 Contato novo'));
@@ -113,7 +118,7 @@ class Tests
 		);
 	
 		$mail->subject("BF1 - mailing list with template");
-		$mail->template('mail/teste.html', $data);
+		$mail->template('mail/test.html', $data);
 		$mail->from(array('mail' => 'fabio@fabioassuncao.com.br', 'name' => 'Babita Framework 1'));
 		
 		$result = $mail->mailingList(array(
@@ -144,7 +149,7 @@ class Tests
 		
 		foreach($list as $l){
 			
-			$mail->template('mail/teste.html', array(
+			$mail->template('mail/test.html', array(
 					'title' => 'Babita Framework 1',
 					'subtitle' => 'Test mailing list with template',
 					'name' => $l['name'],

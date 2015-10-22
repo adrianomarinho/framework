@@ -9,10 +9,10 @@
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
 
-    <title><?= $data['subtitle'] ." &rsaquo; ". SITETITLE ?></title>
+    <title>{{subtitle}} &rsaquo; {{sitetitle}}</title>
     
-    <link href="<?= DIR ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="<?= DIR ?>/assets/css/starter.css" rel="stylesheet">
+    <link href="{{dir}}/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{dir}}/assets/css/starter.css" rel="stylesheet">
 
   </head>
   
@@ -27,16 +27,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="<?= DIR ?>">
-            Babita framework
+          <a class="navbar-brand" href="{{dir}}">
+            Babita Framework
           </a>
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <!--
-            <li class="active"><a href="<?= DIR ?>">Home</a></li>
-            <li><a href="<?= DIR ?>/home/teste/param1/param2/param3">Url com parâmetros</a></li>
-            -->
+            <li class="active"><a href="{{dir}}">Home</a></li>
+            <li><a target="_blank" href="{{dir}}/tests/test-url/param1/param2/param3?get1=sample1&get2=sample2&get3=sample3">URL with parameters</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

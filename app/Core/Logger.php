@@ -3,13 +3,17 @@ namespace Core;
 
 use Helpers\PhpMailer\Mail;
 
-/*
+/**
  * logger class - Custom errors
  *
  * @author David Carr <dave@simplemvcframework.com>
  * @version 2.2
  * @date June 27, 2014
  * @date updated May 18 2015
+ *
+ * @author Fábio Assunção <fabio@fabioassuncao.com.br>
+ * @updated in July 31 2015
+ * Refactoring and inclusion of new methods
  */
 class Logger
 {
@@ -36,7 +40,7 @@ class Logger
     * path to error file
     * @var boolean
     */
-    private static $errorFile = 'files/logs/error/log.html';
+    private static $errorFile = 'storage/logs/error/log.html';
 
     /**
     * in the event of an error show this message
@@ -46,7 +50,7 @@ class Logger
 
         $title = SITETITLE;
         $mail = SITEEMAIL;
-        $link_log = DIR . "/files/logs/error/log.html";
+        $link_log = DIR . "/storage/logs/error/log.html";
         
         $template = <<<EOT
 <!DOCTYPE html>

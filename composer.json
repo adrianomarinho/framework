@@ -1,4 +1,4 @@
-    {
+{
         "name": "Babita",
         "description": "Babita Framework 1",
         "authors": [
@@ -10,5 +10,8 @@
 	    "autoload": {
 	       "psr-4": {"": "app/"}
 	    },
-    	"minimum-stability": "dev"
-    }
+    	"minimum-stability": "dev",
+        "require": {
+                "mustache/mustache": "dev-master"
+        }
+}

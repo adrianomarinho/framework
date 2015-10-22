@@ -2,13 +2,17 @@
 
 namespace Core;
 
-/*
+/**
  * Router - routing urls to closurs and controllers - modified from https://github.com/NoahBuscher/Macaw
  *
  * @author David Carr <dave@simplemvcframework.com>
  * @version 2.2
  * @date Auguest 16th, 2014
  * @date updated May 18 2015
+ *
+ * @author Fábio Assunção <fabio@fabioassuncao.com.br>
+ * @updated in July 31 2015
+ * Refactoring and inclusion of new methods
  */
 
 /**

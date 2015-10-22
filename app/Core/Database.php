@@ -3,7 +3,7 @@
 namespace Core;
 use PDO;
 
-/*
+/**
  * database Helper - extending PDO to use custom methods
  *
  * @author David Carr - dave@simplemvcframework.com
@@ -13,7 +13,7 @@ use PDO;
  *
  * @author Fábio Assunção <fabio@fabioassuncao.com.br>
  * @updated in July 31 2015
- * Inclusion of new methods
+ * Refactoring and inclusion of new methods
  */
 class Database extends PDO
 {

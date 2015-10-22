@@ -98,7 +98,7 @@
      y="-112.32719"
      id="text4257"
      sodipodi:linespacing="125%"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90"><tspan
        sodipodi:role="line"
@@ -118,13 +118,13 @@
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cc" />
   <rect
-     style="fill:#ffffff;stroke:none"
+     style="fill:none;stroke:none"
      id="rect3004"
      width="351.55426"
      height="351.55426"
      x="41.43528"
      y="90.448036"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90" />
   <ellipse
@@ -139,7 +139,7 @@
      sodipodi:cy="284.65793"
      sodipodi:rx="278.71191"
      sodipodi:ry="176.314"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90" />
   <ellipse
@@ -154,7 +154,7 @@
      sodipodi:cy="386.44452"
      sodipodi:rx="278.71191"
      sodipodi:ry="176.314"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90" />
   <ellipse
@@ -169,7 +169,7 @@
      sodipodi:cy="48.197475"
      sodipodi:rx="278.71191"
      sodipodi:ry="176.314"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90" />
   <ellipse
@@ -184,7 +184,7 @@
      sodipodi:cy="265.05753"
      sodipodi:rx="278.71191"
      sodipodi:ry="176.314"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90" />
   <path
@@ -193,7 +193,7 @@
      id="path4292"
      inkscape:connector-curvature="0"
      sodipodi:nodetypes="cssc"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90" />
   <path
@@ -208,7 +208,7 @@
      sodipodi:end="5.5012068"
      d="m 381.88561,88.290314 a 69.224968,8.8227901 0 1 1 -20.10842,-6.217285 l -49.11655,6.217285 z"
      transform="matrix(0.45286002,0.33625176,-0.33625176,0.45286002,62.304755,107.21193)"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90" />
   <path
@@ -223,7 +223,7 @@
      sodipodi:start="0"
      sodipodi:end="5.0435935"
      d="m 80.491341,256.77603 a 34.120098,5.2246141 0 1 1 -23.024846,-4.94066 l -11.095252,4.94066 z"
-     inkscape:export-filename="/var/www/html/babita/files/logo.png"
+     inkscape:export-filename="/var/www/html/babita/storage/framework/logo.png"
      inkscape:export-xdpi="90"
      inkscape:export-ydpi="90" />
 </svg>

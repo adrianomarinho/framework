@@ -4,7 +4,7 @@ namespace Core;
 use Core\Controller;
 use Core\View;
 
-/*
+/**
  * error class - calls a 404 page
  *
  * @author David Carr <dave@simplemvcframework.com>
