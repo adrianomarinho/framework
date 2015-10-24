@@ -62,7 +62,7 @@ class Csrf {
      * @return bool
      */
     public static function isTokenValid(){
-        return $_POST['csrf_token'] === Session::get('csrf_token');
+        return $_REQUEST['csrf_token'] === Session::get('csrf_token');
     }
 
 }

@@ -1,4 +1,54 @@
-<p>Error on Oct 22, 2015 16:57PM - require(app/templates/default/header.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 41</p><p>Error on Oct 20, 2015 18:48PM - require(/vendor/mustache/mustache/src/Mustache/Autoloader.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 4</p><p>Error on Oct 20, 2015 18:01PM - require(app/templates/default/mail/teste.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 37</p><p>Error on Oct 20, 2015 17:59PM - require(app/templates/mail/test.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 39</p><p>Error on Oct 20, 2015 17:59PM - require(app/templates/mail/test.html.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 39</p><p>Error on Oct 20, 2015 17:58PM - require(app/templates/mail/test.html.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 39</p><p>Error on Oct 20, 2015 17:56PM - require(app/templates/default/site/header.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 37</p><p>Error on Oct 20, 2015 17:52PM - require(app/templates/default/header.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 53</p><h3>Exception information:</h3>
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Oct 24, 2015 4:54AM</p>
+
+           <p><strong>Message:</strong> DateTime::__construct(): Failed to parse time string (31/12/1969) at position 0 (3): Unexpected character</p>
+
+           <p><strong>Code:</strong> 0</p>
+
+           <p><strong>File:</strong> /var/www/html/babita/app/Helpers/DateHour.php</p>
+
+           <p><strong>Line:</strong> 38</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 /var/www/html/babita/app/Helpers/DateHour.php(38): DateTime->__construct('31/12/1969')
+#1 /var/www/html/babita/app/Controllers/Tests.php(48): Helpers\DateHour::dateUS('31/10/2015')
+#2 /var/www/html/babita/app/Core/Router.php(130): Controllers\Tests->dateHour(Array)
+#3 /var/www/html/babita/app/Core/Router.php(282): Core\Router::invokeObject('Controllers\\tes...')
+#4 [internal function]: Core\Router::Core\{closure}('tests', 'dateHour')
+#5 /var/www/html/babita/app/Core/Router.php(240): call_user_func_array(Object(Closure), Array)
+#6 /var/www/html/babita/app/Core/Router.php(286): Core\Router::run()
+#7 /var/www/html/babita/index.php(18): Core\Router::autoRun()
+#8 {main}</pre>
+
+           <hr />
+<h3>Exception information:</h3>
+
+           <p><strong>Date:</strong> Oct 24, 2015 4:54AM</p>
+
+           <p><strong>Message:</strong> DateTime::__construct(): Failed to parse time string (31/12/1969) at position 0 (3): Unexpected character</p>
+
+           <p><strong>Code:</strong> 0</p>
+
+           <p><strong>File:</strong> /var/www/html/babita/app/Helpers/DateHour.php</p>
+
+           <p><strong>Line:</strong> 38</p>
+
+           <h3>Stack trace:</h3>
+
+           <pre>#0 /var/www/html/babita/app/Helpers/DateHour.php(38): DateTime->__construct('31/12/1969')
+#1 /var/www/html/babita/app/Controllers/Tests.php(48): Helpers\DateHour::dateUS('31/10/2015')
+#2 /var/www/html/babita/app/Core/Router.php(130): Controllers\Tests->dateHour(Array)
+#3 /var/www/html/babita/app/Core/Router.php(282): Core\Router::invokeObject('Controllers\\tes...')
+#4 [internal function]: Core\Router::Core\{closure}('tests', 'dateHour')
+#5 /var/www/html/babita/app/Core/Router.php(240): call_user_func_array(Object(Closure), Array)
+#6 /var/www/html/babita/app/Core/Router.php(286): Core\Router::run()
+#7 /var/www/html/babita/index.php(18): Core\Router::autoRun()
+#8 {main}</pre>
+
+           <hr />
+<p>Error on Oct 24, 2015 2:37AM - Missing argument 1 for Helpers\DateHour::dateTimeUS(), called in /var/www/html/babita/app/Controllers/Tests.php on line 44 and defined in /var/www/html/babita/app/Helpers/DateHour.php on line 50</p><p>Error on Oct 23, 2015 20:07PM - array_push() expects parameter 1 to be array, object given in /var/www/html/babita/app/Helpers/DateHour.php on line 49</p><p>Error on Oct 23, 2015 16:51PM - mb_check_encoding() expects parameter 1 to be string, object given in /var/www/html/babita/app/Core/View.php on line 108</p><p>Error on Oct 23, 2015 16:50PM - mb_check_encoding() expects parameter 1 to be string, object given in /var/www/html/babita/app/Core/View.php on line 108</p><p>Error on Oct 23, 2015 16:50PM - mb_check_encoding() expects parameter 1 to be string, object given in /var/www/html/babita/app/Core/View.php on line 108</p><p>Error on Oct 23, 2015 16:49PM - mb_check_encoding() expects parameter 1 to be string, object given in /var/www/html/babita/app/Core/View.php on line 108</p><p>Error on Oct 23, 2015 16:47PM - mb_check_encoding() expects parameter 1 to be string, object given in /var/www/html/babita/app/Core/View.php on line 108</p><p>Error on Oct 22, 2015 16:57PM - require(app/templates/default/header.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 41</p><p>Error on Oct 20, 2015 18:48PM - require(/vendor/mustache/mustache/src/Mustache/Autoloader.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 4</p><p>Error on Oct 20, 2015 18:01PM - require(app/templates/default/mail/teste.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 37</p><p>Error on Oct 20, 2015 17:59PM - require(app/templates/mail/test.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 39</p><p>Error on Oct 20, 2015 17:59PM - require(app/templates/mail/test.html.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 39</p><p>Error on Oct 20, 2015 17:58PM - require(app/templates/mail/test.html.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 39</p><p>Error on Oct 20, 2015 17:56PM - require(app/templates/default/site/header.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 37</p><p>Error on Oct 20, 2015 17:52PM - require(app/templates/default/header.php): failed to open stream: No such file or directory in /var/www/html/babita/app/Core/View.php on line 53</p><h3>Exception information:</h3>
 
            <p><strong>Date:</strong> Oct 20, 2015 17:08PM</p>
 

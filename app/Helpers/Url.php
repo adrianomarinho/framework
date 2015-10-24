@@ -72,7 +72,7 @@ class Url
             <script type="text/javascript">
                window.onload = function() {
                  document.getElementById("redirect").submit();
-               };
+               }
             </script>
         </body>
         </html>

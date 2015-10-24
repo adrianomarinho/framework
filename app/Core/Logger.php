@@ -1,7 +1,7 @@
 <?php
 namespace Core;
 
-use Helpers\PhpMailer\Mail;
+use Helpers\Mail;
 
 /**
  * logger class - Custom errors
@@ -366,7 +366,7 @@ EOT;
 
     public static function sendEmail($message)
     {
-            $mail = new \Helpers\PhpMailer\Mail(array('type' => 'php'));
+            $mail = new Mail(array('type' => 'php'));
             
             $subject = 'Novo erro no '.SITETITLE;
             $from = array('mail' => SITEEMAIL, 'name' => SITETITLE);

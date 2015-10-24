@@ -29,19 +29,19 @@ class Wordpress extends Model {
 
 	//VARIAVEL SQL POSTS
 	private $posts = "SELECT
-		  wp.ID as id,
-			wp.post_title as titulo,
-			wp.post_content as conteudo,
-			wp.post_name as slug,
-			wp.post_type as tipo,
-			wp.post_date as data_hora_publicacao_us,
-			wp.post_modified data_hora_modificacao_us,
-			wp.comment_count comentarios,
-			wp.post_status as status,
-			wt.name as categoria,
-			wu.ID as id_autor,
-			wu.user_nicename as slug_autor,
-			wu.display_name as autor
+	    wp.ID as id,
+		wp.post_title as titulo,
+		wp.post_content as conteudo,
+		wp.post_name as slug,
+		wp.post_type as tipo,
+		wp.post_date as data_hora_publicacao_us,
+		wp.post_modified data_hora_modificacao_us,
+		wp.comment_count comentarios,
+		wp.post_status as status,
+		wt.name as categoria,
+		wu.ID as id_autor,
+		wu.user_nicename as slug_autor,
+		wu.display_name as autor
 
 		FROM
 

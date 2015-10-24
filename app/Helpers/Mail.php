@@ -1,16 +1,14 @@
 <?php
-namespace Helpers\PhpMailer;
+namespace Helpers;
+
+use PHPMailer;
+use SMTP;
 
 /*
  * Mail Helper
  *
- * @author David Carr <dave@simplemvcframework.com>
- * @version 1.0
- * @date May 18 2015
- *
  * @author Fábio Assunção <fabio@fabioassuncao.com.br>
- * @updated in July 31 2015
- * Added methods to simplify sending content (html templates, attachments, etc)
+ * @date Jul 31 2015
  */
 class Mail extends PhpMailer
 {
@@ -178,7 +176,7 @@ class Mail extends PhpMailer
 	/**
 	 * Add a "Reply-to" address.
 	 *
-	 * @param string ou array $replyTo
+	 * @param string or array $replyTo
 	 *
 	 * 	Ex. 1: $replyTo = array(
 	 *		'aangelomarinho@gmail.com, Adriano Marinho',

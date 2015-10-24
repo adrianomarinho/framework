@@ -13,6 +13,8 @@ use Helpers\MyCurl;
 
 use Helpers\Template;
 
+use Helpers\DateHour;
+
 class Tests
 {
 
@@ -36,6 +38,17 @@ class Tests
     	$temp->renderPrint('samples/mustache/footer.html', $data, true);
     	
     }
+
+    public function dateHour()
+    {
+    	// for ($i=0; $i <= 24 ; $i++) { 
+    	// 	print DateHour::addMonthsDate('2015-10-31', $i) ."<br>";
+    	// }
+
+    	$x = DateHour::dateBR('2015-10-31');
+    	echo "<pre>";
+    	print_r($x);
+    }
 	
     public function testUrl($param)
     {
@@ -57,7 +70,7 @@ class Tests
 		
 		$param['type'] = 'smtp';
 		
-		$mail = new \Helpers\PhpMailer\Mail($param);
+		$mail = new \Helpers\Mail($param);
 		
 		$assunto = "BF1 - Teste email";
 		$mensagem = "Mensagem teste Babita Framework 1 (ÁÂÀÄÇ$!@&%)";
@@ -78,13 +91,13 @@ class Tests
 	
 	public function mailTemplate(){
 		
-		$mail = new \Helpers\PhpMailer\Mail();
+		$mail = new \Helpers\Mail();
 		
 		$data = array(
 				'title' => 'Babita Framework 1',
 				'subtitle' => 'Teste com template',
-				'name' => 'Adriano Marinho',
-				'link' => '#',
+				'name' => 'Fábio Assunção',
+				'link' => DIR,
 				'link_name' => 'Botão'
 				);
 		
@@ -107,7 +120,7 @@ class Tests
 	
 	public function mailList(){
 	
-		$mail = new \Helpers\PhpMailer\Mail();
+		$mail = new \Helpers\Mail();
 	
 		$data = array(
 				'title' => 'Babita Framework 1',
@@ -135,7 +148,7 @@ class Tests
 	
 	public function mailListLoop(){
 	
-		$mail = new \Helpers\PhpMailer\Mail();
+		$mail = new \Helpers\Mail();
 		$mail->subject("BF1 - mailing list with template");
 		$mail->from(array('mail' => 'fabio@fabioassuncao.com.br', 'name' => 'Babita Framework 1'));
 

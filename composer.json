@@ -12,6 +12,7 @@
 	    },
     	"minimum-stability": "dev",
         "require": {
-                "mustache/mustache": "dev-master"
+                "mustache/mustache": "dev-master",
+                "phpmailer/phpmailer": "dev-master"
         }
 }
