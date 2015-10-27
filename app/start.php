@@ -1,5 +1,9 @@
 <?php
 
+ini_set('display_errors', 1);
+ini_set('log_errors', 1);
+error_reporting(E_ALL);
+
 if (version_compare(PHP_VERSION, '5.3.2', '<')) {
 	exit("Sorry, BF1 can only be run on PHP version 5.3.2 or higher! His version: " . PHP_VERSION);
 }

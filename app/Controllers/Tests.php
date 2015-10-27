@@ -17,13 +17,6 @@ use Helpers\DateHour;
 
 class Tests
 {
-
-	public $db;
-	
-	public function __construct()
-	{
-		//$this->db = Database::get();
-	}
 	
     public function index()
     {
@@ -32,22 +25,11 @@ class Tests
     	$data['sitetitle'] = SITETITLE;
     	$data['dir'] = DIR;
 
-    	$temp = new Template();
-    	$temp->renderPrint('samples/mustache/header.html', $data, true);
-    	$temp->renderPrint('samples/mustache/home.html', $data, true);
-    	$temp->renderPrint('samples/mustache/footer.html', $data, true);
+    	$temp = new Template;
+    	$temp->renderPrint('site/html/header.html', $data);
+    	$temp->renderPrint('site/html/home.html', $data);
+    	$temp->renderPrint('site/html/footer.html', $data);
     	
-    }
-
-    public function dateHour()
-    {
-    	// for ($i=0; $i <= 24 ; $i++) { 
-    	// 	print DateHour::addMonthsDate('2015-10-31', $i) ."<br>";
-    	// }
-
-    	$x = DateHour::dateBR('2015-10-31');
-    	echo "<pre>";
-    	print_r($x);
     }
 	
     public function testUrl($param)
@@ -56,7 +38,8 @@ class Tests
     	$a = [];
         $a['param'] = $param;
         $a['get'] = $_GET;
-        View::output($a, 'json');
+
+        Data::pr($a);
 
     }
 
@@ -85,7 +68,7 @@ class Tests
 			);
 
 		$result = $mail->quick($assunto, $mensagem, $from, $destino, $replyTo);
-		View::output($result, 'vd');
+		Data::vd($result);
 		
 	}
 	
@@ -114,7 +97,7 @@ class Tests
 		$mail->replyTo(array('mail' => 'contato@bf1.com', 'name' => 'BF1 Contato novo'));
 
  		$result = $mail->go();
- 		View::output($result, 'vd');
+ 		Data::vd($result);
 	
 	}
 	
@@ -142,7 +125,7 @@ class Tests
 				"fabiioassuncao@gmail.com, Fabio IPTV"
 		));
 
-		View::output($result, 'json');
+		Data::json($result);
 	
 	}
 	
@@ -174,7 +157,7 @@ class Tests
 			
 		}
 		
-		View::output($mail->log(), 'json');
+		Data::json($mail->log());
 	
 	}
 }

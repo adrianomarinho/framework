@@ -16,6 +16,80 @@ namespace Helpers;
 class Data
 {
 
+    public static function resumeText($text, $maximum_characters)
+    {
+    
+    	// REMOVE TODAS AS TAGS HTML E GERA UM RESUMO DE ACORDO COM A QUANTIDADE DE CARACTERES INFORMADO
+    		
+    	$post = self::html2txt($text);
+    		
+    	$ex = explode(" ", strip_tags( $post ) );
+    		
+    	$newText = '';
+    		
+    	foreach( $ex as $palavra ) {
+    		if ( strlen($newText) < $maximum_characters ) {
+    			$size = strlen($newText) + strlen($palavra);
+    				
+    			if ( $size < $maximum_characters ) {
+    				$newText .= " {$palavra}";
+    			} else {
+    				break;
+    			}
+    		} else {
+    			break;
+    		}
+    	}
+    		
+    	return $newText;
+    }
+
+    public static function html2txt($text)
+    {
+    
+    	// REMOVE TODAS AS TAGS HTML DO POST TRANFORMANDO EM APENAS TEXT SIMPLES
+    
+    	$search = array('@<script[^>]*?>.*?</script>@si', // Strip out javascript
+    			'@<[\/\!]*?[^<>]*?>@si',            	  // Strip out HTML tags
+    			'@<style[^>]*?>.*?</style>@siU',    	  // Strip style tags properly
+    			'@<![\s\S]*?--[ \t\n\r]*>@'         	  // Strip multi-line comments including CDATA
+    	);
+    	$result = preg_replace($search, '', $text);
+    	return $result;
+    }
+
+    public static function convertUtf8Enconde($data)
+    {
+    	//CODIFICA ARRAY EM UTF8
+    
+    	if (is_array($data)) {
+    
+    		$novo = array();
+    
+    		foreach ($data as $i => $value) {
+    
+    			if (is_array($value)) {
+    				$value = self::convertUtf8Enconde($value);
+    
+    			} else if (!mb_check_encoding($value, 'UTF-8')) {
+    				$value = utf8_encode($value);
+    
+    			}
+    
+    			$novo[$i] = $value;
+    		}
+    
+    		return $novo;
+    
+    	} else {
+    
+    		if (!mb_check_encoding($data, 'UTF-8')) {
+    			$value = utf8_encode($data);
+    		}
+    
+    	}
+    }
+
 	public static function unserialize( $data ) {
 		if ( self::isSerialized( $data ) ) // don't attempt to unserialize data that wasn't serialized going in
 			return unserialize( $data );
@@ -153,17 +227,18 @@ class Data
      * @param  string $data
      * @return string
      */
-    public static function sup($data)
+    public static function stu($data)
     {
         return strtoupper($data);
     }
 
     /**
-     * strtolower - convert string to lowercase
+     * strtolower - convert string to lowercase.
+     *
      * @param  string $data
      * @return string
      */
-    public static function slw($data)
+    public static function stl($data)
     {
         return strtolower($data);
     }
@@ -177,4 +252,37 @@ class Data
     {
         return ucwords($data);
     }
+
+    public static function pr($data)
+    {
+    	print "<pre>";
+    	print_r($data);
+    	print "</pre>";
+    }
+
+    public static function vd($data)
+    {
+    	print "<pre>";
+    	var_dump($data);
+    	print "</pre>";
+    }
+
+    public static function json($data)
+    {
+        print json_encode($data);
+    }
+
+    /**
+     * key - this will generate a 35 character key
+     * @return string
+     */
+     public static function createKey($length = 32)
+     {
+        $chars = "!@#$%^&*()_+-=ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+        $key = "";
+        for ($i = 0; $i < $length; $i++) {
+            $key .= $chars{rand(0, strlen($chars) - 1)};
+        }
+        return $key;
+     }
 }

@@ -67,8 +67,7 @@ class Session {
 	 * @return retorna sessao inteira
 	 */
 	public static function view($tipo = null){
-		$result =  isset($_SESSION[SESSION_PREFIX]) ? $_SESSION[SESSION_PREFIX] : false;
-		return View::output($result, $tipo);
+		return isset($_SESSION[SESSION_PREFIX]) ? $_SESSION[SESSION_PREFIX] : false;
 	}
 	
 	/**

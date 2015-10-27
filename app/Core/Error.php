@@ -1,24 +1,23 @@
 <?php
 namespace Core;
 
-use Core\Controller;
-use Core\View;
+use Helpers\Template;
 
 /**
- * error class - calls a 404 page
+ * error class
  *
- * @author David Carr <dave@simplemvcframework.com>
- * @version 2.2
- * @date June 27, 2014
- * @date updated May 18 2015
+ * @author Fábio Assunção <fabio@fabioassuncao.com.br>
+ * @updated in July 31 2015
+ * Refactoring and inclusion of new methods
  */
-class Error extends Controller
+class Error
 {
     /**
      * $error holder
      * @var string
      */
     private $error = null;
+    private $view;
 
     /**
      * save error to $this->_error
@@ -26,8 +25,9 @@ class Error extends Controller
      */
     public function __construct($error)
     {
-        parent::__construct();
         $this->error = $error;
+        $this->view = new Template;
+
     }
 
     /**
@@ -37,22 +37,15 @@ class Error extends Controller
     {
         header("HTTP/1.0 404 Not Found");
 
-        $data['title'] = '404';
-        $data['error'] = $this->error;
+        $data = [
+            'title' => '404 &rsaquo; ' . SITETITLE,
+            'mail_dev' => SITEEMAIL,
+            'error' => $this->error,
+            'dir' => DIR
+        ];
 
-print <<<EOT
-	<!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8"/>
-            <title>Erro</title>
-        </head>
-        <body>
-  			<p style="text-align: center;font-size: 2em;background-color: #838383;padding: 20px;color: #fff;border-radius: 10px;">404 - Página não encontrada.</p>
-        </body>
-    </html>
-EOT;
-        exit;
+        $this->view->renderPrint('error/404.html', $data);
+
     }
 
     /**

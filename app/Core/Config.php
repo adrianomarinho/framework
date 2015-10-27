@@ -7,16 +7,23 @@ class Config
 {
     public function __construct()
     {
-    	
-        //Ativa o buffer de saída
-        ob_start();
         
+        //Turn on output buffering
+        ob_start();
 
-        //Definir controller padrão e método para chamadas legados
+        define('DEBUG', true);
+
+        /**
+        * determins if error should be emailed to SITEEMAIL defined in app/Core/Config.php
+        * @var boolean
+        */
+        define('MAIL_ERROR', false);
+
+        //Set default controller and method for legacy calls
         define('DEFAULT_CONTROLLER', 'Welcome');
         define('DEFAULT_METHOD', 'index');
 
-        //Denifir template padrão
+        //Set default template
         define('DEFAULT_TEMPLATE', 'default');
 
         define('DB_TYPE', 'mysql');
@@ -25,47 +32,43 @@ class Config
         define('DB_USER', 'root');
         define('DB_PASS', '123456');
         define('DB_PORT', '3306');
-        define('PREFIX', 'bab_');
+        define('DB_PREFIX', 'bab_');
         define('DIR', 'http://localhost/babita');
 
-        //Define prefixo de sessão
+        //Set session prefix
         define('SESSION_PREFIX', 'bab');
         
-        //Define coluna datetime de inserção e atualização no banco de dados
-        define('DATETIME_INSERT', 'datetime_insert');
-        define('DATETIME_UPDATE', 'datetime_update');
+        //Set datetime column insert and update the database
+        define('DATETIME_INSERT', 'created_at');
+        define('DATETIME_UPDATE', 'updated_at');
         
-        //Define chave de encriptação de dados
+        //Define data encryption key
         define('CHAVE_ENCRYPT', 'bf');
 
-        //Define título do site / projeto
+        //Sets title of the site / project
         define('SITETITLE', 'Babita Framework V1');
 
-        //Email do administrador para notificação de erros no sistema
+        //Administrator e-mail for error notification system
         define('SITEEMAIL', 'fabio@fabioassuncao.com.br');
 
         define('MAIL_SMTP_AUTH', true); // // Enable SMTP authentication
         define('MAIL_IS_HTML', true);  // Set email format to HTML
         define('MAIL_CHARSET', 'UTF-8');
         define('MAIL_SMTP_SECURE', 'tls'); // Enable TLS encryption, `ssl` also accepted
-        define('MAIL_HOST', 'smtp.gmail.com'); //Servidor de envio
-        define('MAIL_PORT', '587'); //Porta de envio
-        define('MAIL_USER', 'fabiioassuncao@gmail.com'); //Login do email de envio
-        define('MAIL_PASS', 'secret'); //Senha
+        define('MAIL_HOST', 'smtp.gmail.com'); //Outgoing Server
+        define('MAIL_PORT', '587'); //Port forwarding
+        define('MAIL_USER', 'fabiioassuncao@gmail.com'); //Login sending email
+        define('MAIL_PASS', 'secret'); //Password
 
-        //Ativa a manipulação de erro personalizada
+        //Enables custom error handling
         set_exception_handler('Core\Logger::ExceptionHandler');
         set_error_handler('Core\Logger::ErrorHandler');
 
         //Define timezone
         date_default_timezone_set('America/Sao_Paulo');
 
-        //Inicia sessões
+        //Start sessions
         Session::init();
-        
-        //Habilita os erros em ambiente local
-        ini_set('display_errors', 1);
-        ini_set('log_errors', 1);
-        error_reporting(E_ALL);
+    
     }
 }
