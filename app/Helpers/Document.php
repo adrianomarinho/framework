@@ -145,4 +145,115 @@ class Document
         }
         return $file;
     }
+    
+    public static function upload($config, $files)
+    {
+        //Ex.:
+        // $config['path'] = 'uploads/candidatos/';
+        // $config['size'] = 1024 * 1024 * 2;
+        // $config['type'] = array('jpg', 'png', 'gif');
+        // $config['rename'] = false;
+
+        if (!file_exists($config['path'])) {
+            mkdir($config['path'], 0777, true);
+        }
+
+        foreach ($files as $key => $value) {
+
+            //\Core\View::output($value, 'text');
+
+            $error[0] = 'Não houve erro';
+            $error[1] = 'O arquivo no upload é maior do que o limite do PHP';
+            $error[2] = 'O arquivo ultrapassa o limite de tamanho especifiado no HTML';
+            $error[3] = 'O upload do arquivo foi feito parcialmente';
+            $error[4] = 'Não foi feito o upload do arquivo';
+
+            $name = $value['name'];
+            $extension = self::getExtension( $name );
+            $file_error = $value['error'];
+            $size = $value['size'];
+            $tmp_name = $value['tmp_name'];
+
+            if ($file_error != 0) {
+
+                array_push(
+                    self::$log, 
+                    array(
+                        "field" => $key,
+                        "file" => $name,
+                        "status" => false, 
+                        "message" => "Não foi possível fazer o upload, erro:" . $error[$file_error]
+                    )
+                );
+            }
+
+            
+            if (array_search($extension, $config['type']) === false) {
+
+                array_push(
+                    self::$log, 
+                    array(
+                        "field" => $key,
+                        "file" => $name,
+                        "status" => false, 
+                        "message" => "Por favor, envie arquivos com as seguintes extensões: jpg, png ou gif"
+                    )
+                );
+            }
+
+            if ($config['size'] < $size) {
+
+                array_push(
+                    self::$log, 
+                    array(
+                        "field" => $key,
+                        "file" => $name,
+                        "status" => false, 
+                        "message" => "O arquivo enviado é maior que o permitido"
+                    )
+                );
+            }
+
+            if ($config['rename'] == true) {
+              
+              $name_final = $key .'.' . $extension;
+
+            } else {
+              
+              $extension = self::getExtension( $name );
+              $name_final = self::removeExtension( $name ) .'_'. md5( time() ) .'.'. $extension;
+
+            }
+              
+
+            if (move_uploaded_file($tmp_name, $config['path'] . $name_final)) {
+
+                array_push(
+                    self::$log, 
+                    array(
+                        "field" => $key,
+                        "file" => $name,
+                        "status" => true, 
+                        "message" => DIR . '/' . $config['path'] . $name_final
+                    )
+                );                    
+
+            } else {
+
+                array_push(
+                    self::$log, 
+                    array(
+                        "field" => $key,
+                        "file" => $name,
+                        "status" => false, 
+                        "message" => "Não foi possível enviar o arquivo, tente novamente"
+                    )
+                );
+
+            }
+
+        }
+
+        return self::$log;
+    }
 }
